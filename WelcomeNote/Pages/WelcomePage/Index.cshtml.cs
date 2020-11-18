@@ -105,14 +105,14 @@ namespace WelcomeNote.Pages.WelcomePage
             Console.WriteLine("File name : " + Filenames);
             Console.WriteLine("Paths : " + FileLocation);
 
-            string DbConnection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WelcomeNote;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string DbConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zairu\source\repos\WelcomeNote\WelcomeNote\Data\WelcomeNote.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection conn = new SqlConnection(DbConnection);
             conn.Open();
 
             using(SqlCommand command = new SqlCommand())
             {
                 command.Connection = conn;
-                command.CommandText = "INSERT INTO WelcomeNote (Date, UserName, FileName, FilePath) VALUES (@DateUpdate, @User, @FName, @Fpath)";
+                command.CommandText = "INSERT INTO WelcomeNote (Date, UserName, FileName, Directory) VALUES (@DateUpdate, @User, @FName, @Fpath)";
 
                 command.Parameters.AddWithValue("@DateUpdate", welcomeNote.DateUpdate);
                 command.Parameters.AddWithValue("@User", welcomeNote.User);
