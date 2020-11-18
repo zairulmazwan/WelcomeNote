@@ -1,0 +1,45 @@
+﻿@page
+@model WelcomeNote.Pages.WelcomePage.IndexModel
+@{
+}
+
+
+<h1>:: Welcome Note Page ::</h1>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+
+            <div class="form-group">
+                <label class="control-label ">Welcome Message Para 1</label>
+                <textarea type="text" asp-for="welcomeNote.Message1" class="form-control" style="height: 150px; width: 600px"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label ">Welcome Message Para 2</label>
+                <textarea type="text" asp-for="welcomeNote.Message2" class="form-control" style="height: 150px; width: 600px"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label ">Welcome Message Para 3</label>
+                <textarea type="text" asp-for="welcomeNote.Message3" class="form-control" style="height: 150px; width: 600px"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label ">Upadated On : </label>
+                <input type="hidden" asp-for="welcomeNote.DateUpdate" class="control-label " disable/>@Model.welcomeNote.DateUpdate
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label ">Updated By : </label>
+                <input class="form-control" asp-for="welcomeNote.User" />
+            </div>
+
+            <div>
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
