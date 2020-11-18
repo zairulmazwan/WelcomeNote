@@ -103,7 +103,7 @@ namespace WelcomeNote.Pages.WelcomePage
             Console.WriteLine("Date : "+welcomeNote.DateUpdate);
             Console.WriteLine("User : " + welcomeNote.User);
             Console.WriteLine("File name : " + Filenames);
-            Console.WriteLine("Paths : " + FileLocation);
+            //Console.WriteLine("Paths : " + FileLocation);
 
             string DbConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zairu\source\repos\WelcomeNote\WelcomeNote\Data\WelcomeNote.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection conn = new SqlConnection(DbConnection);
